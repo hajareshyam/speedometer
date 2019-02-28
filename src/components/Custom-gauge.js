@@ -39,7 +39,7 @@ export default class CustomGauge extends Component {
 
   renderTicks = opts => {
     let tickAngles = [];
-    for (let i = 0; i <= 140; i += opts.tickInterval) {
+    for (let i = 0; i <= opts.maxSpeed; i += opts.tickInterval) {
       tickAngles.push(i);
     }
     console.log(`tickAngles - ${tickAngles}`);
@@ -89,7 +89,7 @@ export default class CustomGauge extends Component {
       //         ? 140
       //         : opts.currentValue
       //       : 0;
-      needleAngle = (270 * opts.currentValue) / 140;
+      needleAngle = (270 * opts.currentValue) / opts.maxSpeed;
 
     let needleElm = null;
     if (opts.needleSharp) {
@@ -175,7 +175,7 @@ export default class CustomGauge extends Component {
           <G transform={`rotate(135 ${cX} ${cY})`}>
             {this.renderDial(opts)}
             {/* {this.renderTicks(opts)} */}
-            {this.renderProgress(opts)}
+            {/* {this.renderProgress(opts)} */}
             {this.renderNeedle(opts)}
             {this.renderText(opts)}
           </G>

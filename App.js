@@ -33,8 +33,8 @@ export default class App extends Component {
           style={styles.textInput}
           onChangeText={this.onChange}
         />
-        <Progress size={300} currentValue={this.state.value} />
-        {/* <CustomGauge size={300} currentValue={this.state.value} /> */}
+        {/* <Progress size={300} currentValue={this.state.value} /> */}
+        <CustomGauge size={300} currentValue={this.state.value} />
         {/* <Gauge size={300} currentValue={this.state.value} /> */}
         {/* <GaugeTicks size={300} currentValue={this.state.value} /> */}
       </View>
